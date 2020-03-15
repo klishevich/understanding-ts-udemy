@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import { plainToClass } from "class-transformer";
+import { validate } from "class-validator";
 
 import { getName } from "./getName";
 import { Product } from "./product.model";
@@ -31,3 +32,11 @@ const loadedProducts = plainToClass(Product, products);
 for (const prod of loadedProducts) {
   console.log(prod.getInformation());
 }
+
+const newProduct = new Product("", -5.99);
+validate(newProduct).then(errors => {
+  if (errors.length > 0) {
+    console.log("VALIDATION ERRORS", errors);
+  }
+});
+console.log(newProduct);
