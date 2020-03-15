@@ -15,16 +15,3 @@ function add(a: Combinable, b: Combinable) {
 
 const result = add("Michael ", "Klishevich");
 const result2 = add(1, 1);
-
-const fetchUserData = {
-  id: "u1",
-  name: "Mike",
-  // job: { title: "CEO", description: "My own company" }
-};
-
-// console.log(fetchUserData?.job && fetchUserData.job.title);
-
-const usetInput = "";
-const storedData = usetInput ?? "DEFAULT";
-
-console.log(storedData);
